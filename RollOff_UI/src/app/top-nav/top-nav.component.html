@@ -1,0 +1,15 @@
+
+<mat-toolbar class="nav">
+  <div class="container">
+      <a routerLink="" class="mat-button-base">
+ROLLOFF
+      </a>
+
+      <a routerLink=""  *ngIf="!Isloggedin" mat-button  mat-raised-button class="m1-1">Login</a>
+
+      <p *ngIf="Isloggedin" id="user" matTooltip="{{role}}">{{username}}</p>
+      <a routerLink="" id="logout" *ngIf="Isloggedin" (click)="logout()"  mat-raised-button class="m1-1">Log out</a>
+  </div>
+  </mat-toolbar>
+
+

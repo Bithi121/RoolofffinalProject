@@ -1,0 +1,53 @@
+.top-row{
+  padding: 1em 0;
+}
+.bot-row{
+  padding: 1em 24em 0em;
+
+}
+
+.bot-row-m{
+  padding: 1em 15em;
+ text-align: center;
+ width: auto;
+}
+#app{
+
+  margin-right: auto;
+}
+#rej{
+
+  margin-left: auto;
+}
+
+.bt{
+  width: 200px;
+  background-color: #17a2b8;
+  color: white;
+}
+.row-base{
+  margin-left: 15em;
+  line-height: 3em;
+}
+.container-tab{
+
+  padding: 2em 0;
+  border-style: solid;
+  border-color: rgb(21, 21, 19);
+}
+
+.sp{
+  font-weight:bold ;
+  padding-left: 3em;
+}
+.bt{
+  background-color:#17a2b8;
+}
+.btn{
+  width: 150px;
+  padding: 5px;
+}
+.l-btn{
+  width: 250px;
+
+}

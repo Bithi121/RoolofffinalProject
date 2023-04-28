@@ -1,0 +1,40 @@
+.top-row{
+    padding: 1em 0;
+}
+.bot-row{
+    padding: 1em 30em;
+}
+.row-base{
+    margin-left: 15em;
+    line-height: 3em;
+}
+#row-top-row{
+background-color: #17a2b8;
+color: white;
+}
+/* .mat-card{
+  max-width: 300px;
+  margin: 1em auto;
+} */
+#row-bot-row{
+  width: 150px;
+  justify-content: center;
+  background-color: #17a2b8;
+  color: white;
+}
+/* .container-tab{
+
+    padding: 2em 0;
+    border-style: solid;
+    border-color: rgb(21, 21, 19);
+} */
+
+.sp{
+    font-weight:bold ;
+    padding-left: 3em;
+}
+.bt{
+  width: 200px;
+  background-color: #17a2b8;
+  color: white;
+}

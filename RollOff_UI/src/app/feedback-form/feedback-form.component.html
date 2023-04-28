@@ -1,0 +1,251 @@
+<!-- <p>feedback-form works!</p> -->
+<div class="page-header">
+  <div class="container " align="center">
+      <h1>Give your feedback</h1>
+  </div>
+
+</div>
+<div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+     <a [routerLink]="['/app-employees', employee.globalGroupId]" style="background-color: #17a2b8; color: white;" class="bt" mat-raised-button><mat-icon>chevron_left</mat-icon>Go Back</a>
+   </div>
+  </div>
+    </div>
+
+  <mat-card>
+<div class=" mat-elevation-z8">
+<div class="container mt-3" style="margin-left: 25px; margin-right: 25px; padding: 0px;" >
+  <form [formGroup]="addForms" (ngSubmit)="SaveData()">
+      <div class="form-group row align-items-center my-2">
+        <div class="col-sm-3 my-1">
+          <mat-form-field apperance="fill">
+          <mat-label class="sr-only">Global Group ID</mat-label>
+          <input matInput readonly type="number"  placeholder="Global Group ID" name="globalGroupId" formControlName="globalGroupId">
+        </mat-form-field>
+        </div>
+
+        <div class="col-sm-3 my-1">
+          <mat-form-field apperance="fill">
+            <mat-label class="sr-only">Employee No</mat-label>
+            <input matInput readonly type="text"  placeholder="Employee No" name="employeeNo" formControlName="employeeNo">
+          </mat-form-field>
+          </div>
+
+        <div class="col-sm-3 my-1">
+        <mat-form-field apperance="fill">
+          <mat-label class="sr-only">Name</mat-label>
+          <input matInput readonly type="text"  placeholder="Name" name="name" formControlName="name">
+        </mat-form-field>
+        </div>
+
+        <div class="col-sm-3 my-1">
+        <mat-form-field apperance="fill">
+          <mat-label class="sr-only">Practice</mat-label>
+          <input matInput readonly type="text"  placeholder="Practice" name="practice" formControlName="practice">
+        </mat-form-field>
+      </div>
+      </div>
+
+      <div class="form-group row align-items-center my-2">
+        <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill" >
+            <mat-label >Performance Issue</mat-label>
+            <mat-select formControlName="performanceIssue">
+              <mat-option value="" >--Select--</mat-option>
+                <mat-option value="Yes" >Yes</mat-option>
+                <mat-option value="No" >No</mat-option>
+            </mat-select>
+          </mat-form-field>
+         </div>
+
+          <div class="col-sm-3 my-1">
+          <mat-form-field apperance="fill">
+              <mat-label class="sr-only">Local Grade</mat-label>
+              <input matInput readonly type="text" placeholder="Local Grade" name="localGrade" formControlName="localGrade">
+            </mat-form-field>
+            </div>
+
+          <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill" style="width: 212px;">
+              <mat-label class="sr-only">Roll Off End Date</mat-label>
+              <input matInput  [matDatepicker]="picker " name="rollOffEndDate" [min]=" minDate" (dateChange)="getDates($event)"   formControlName="rollOffEndDate">
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+              <mat-datepicker-toggle  matIconSuffix  [for]="picker" ></mat-datepicker-toggle>
+              <mat-datepicker #picker ></mat-datepicker>
+            </mat-form-field>
+            </div>
+
+          <div class="col-sm-3 my-1">
+            <mat-form-field appearance="fill" >
+              <mat-label >Resigned</mat-label>
+              <mat-select formControlName="resigned">
+                <mat-option value="" >--Select--</mat-option>
+                  <mat-option value="Yes" >Yes</mat-option>
+                  <mat-option value="No" >No</mat-option>
+              </mat-select>
+          </mat-form-field>
+              <!-- <span asp-validation-for="PerformanceIssue" class="text-danger"></span> -->
+          </div>
+
+
+
+      </div>
+
+      <div class="form-group row align-items-center my-2">
+        <div class="col-sm-3 my-1">
+            <mat-form-field appearance="fill">
+                <mat-label class="sr-only">Communication</mat-label>
+                <input matInput type="text"  placeholder="Communication" name="communication" formControlName="communication">
+              </mat-form-field>
+              </div>
+
+        <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill">
+              <mat-label class="sr-only">Primary Skills</mat-label>
+              <input matInput type="text"  placeholder="Primary Skills" name="primarySkill" formControlName="primarySkill">
+            </mat-form-field>
+            </div>
+
+          <div class="col-sm-3 my-1">
+            <mat-form-field appearance="fill" >
+              <mat-label >Reason for Roll Off</mat-label>
+              <mat-select #reason (change)="onChange(reason.value)" formControlName="reasonForRollOff">
+                <mat-option value="">--Select--</mat-option>
+                  <mat-option value="Project Closure">Project Closure</mat-option>
+                  <mat-option value="Maternity Leave">Maternity Leave</mat-option>
+                  <mat-option value="Resigned">Resigned</mat-option>
+                  <mat-option value="Performance Issue">Performance Issue</mat-option>
+                  <mat-option value="HR Case"> HR Case</mat-option>
+                  <mat-option value="People Skill">People Skill</mat-option>
+                  <mat-option value="Automation">Automation</mat-option>
+                  <mat-option value="Quality"> Quality</mat-option>
+                  <mat-option value="New Delivery Model">New Delivery Model</mat-option>
+                  <mat-option value="Labour(Work Force Productivity)">Labour(Work Force Productivity)</mat-option>
+                  <mat-option value="Client Budget Issue">Client Budget Issue</mat-option>
+                  <mat-option value="Other Reason">Other Reason</mat-option>
+              </mat-select>
+          </mat-form-field>
+              <!-- <span asp-validation-for="ReasonForRollOff" class="text-danger"></span> -->
+          </div>
+          <div class="col-sm-3 my-1" *ngIf="reason.value=='Labour(Work Force Productivity)'">
+            <mat-form-field appearance="fill">
+              <mat-label >Specify</mat-label>
+              <mat-select name="labour" formControlName="labour">
+                  <mat-option value="">--Select--</mat-option>
+                  <mat-option value="Release of resources by keeping the same scope">Release of resources by keeping the same scope</mat-option>
+                  <mat-option value="Resource is not replaced by backfill">Resource is not replaced by backfill</mat-option>
+                  <mat-option value="Resource is released from fixed pool to AD work/minor enhancement">Resource is released from fixed pool to AD work/minor enhancement</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-sm-3 my-1" *ngIf="reason.value == 'Other Reason'">
+          <mat-form-field appearance="fill">
+              <mat-label class="sr-only">Other Reason</mat-label>
+              <input matInput type="text"  placeholder="Other Reason" name="otherReasons" formControlName="otherReasons">
+            </mat-form-field>
+            </div>
+      </div>
+
+      <div class="form-group row align-items-center my-2">
+        <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill" >
+            <mat-label >Under Probation</mat-label>
+            <mat-select formControlName="underProbation">
+              <mat-option value="" >--Select--</mat-option>
+                <mat-option value="Yes" >Yes</mat-option>
+                <mat-option value="No" >No</mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+
+        <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill">
+              <mat-label class="sr-only">Role Competencies</mat-label>
+              <input matInput type="text"  placeholder="Role Competencies" name="roleCompetencies" formControlName="roleCompetencies">
+            </mat-form-field>
+            </div>
+          <div class="col-sm-3 my-1">
+          <mat-form-field>
+              <mat-label class="sr-only">Project Code</mat-label>
+              <input matInput readonly type="Number"  placeholder="Project Code" name="projectCode" formControlName="projectCode">
+            </mat-form-field>
+            </div>
+
+          <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill">
+              <mat-label class="sr-only">Technical Skills</mat-label>
+              <input matInput type="text"  placeholder="Technical Skills" name="technicalSkills" formControlName="technicalSkills">
+            </mat-form-field>
+            </div>
+      </div>
+
+      <div class="form-group row align-items-center my-2">
+        <div class="col-sm-3 my-1">
+          <mat-form-field appearance="fill" >
+            <mat-label >Long Leave</mat-label>
+            <mat-select #ll (change)="onChange(ll.value)" formControlName="longLeave">
+              <mat-option value="" >--Select--</mat-option>
+                <mat-option value="Yes" >Yes</mat-option>
+                <mat-option value="No" >No</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+
+        <div class="col-sm-3 my-1" *ngIf="ll.value=='Yes'">
+          <mat-form-field appearance="fill">
+            <mat-label >Leave Type</mat-label>
+            <mat-select   formControlName="leaveType">
+                <mat-option value="">--Select--</mat-option>
+                <mat-option value="Privilege Leave">Privilege Leave</mat-option>
+                <mat-option value="Casual Leave">Casual Leave</mat-option>
+                <mat-option value="Maternity Leave">Maternity Leave</mat-option>
+                <mat-option value="Sick Leave">Sick Leave</mat-option>
+                <mat-option value="Paternity Leave">Paternity Leave</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-3 my-1">
+          <mat-form-field apperance="fill">
+              <mat-label class="sr-only">Remarks</mat-label>
+              <input matInput type="text"  placeholder="Remarks" name="remarks" formControlName="remarks">
+            </mat-form-field>
+            </div>
+
+          <div class="col-sm-3 my-1">
+          <mat-form-field apperance="fill">
+            <mat-label class="sr-only">Project Name</mat-label>
+            <input matInput readonly type="text"  placeholder="Project Name" name="projectName" formControlName="projectName">
+          </mat-form-field>
+          </div>
+        </div>
+        <div class="form-group row align-items-center my-2">
+          <div class="col-sm-3 my-1">
+            <mat-form-field appearance="fill" >
+              <mat-label >This Realease needs Backfilled/is Backfilled> </mat-label>
+              <mat-select formControlName="thisReleaseNeedBackfillIsBackFilled">
+                <mat-option value="" >--Select--</mat-option>
+                  <mat-option value="Yes" >Yes</mat-option>
+                  <mat-option value="No" >No</mat-option>
+              </mat-select>
+          </mat-form-field>
+          </div>
+          
+        <div class="col-sm-3 my-1">
+          <mat-form-field apperance="fill">
+            <mat-label class="sr-only">Relevant Experience in Years</mat-label>
+            <input matInput type="Number"  placeholder="Relevant Experience in Years" name="relevantExperienceYrs" formControlName="relevantExperienceYrs">
+          </mat-form-field>
+          </div>
+          </div>
+      <div class="col-auto my-3 mx-2 text-center">
+          <button type="submit" class="btn" mat-raised-button style="background-color: #17a2b8; color: white; width: 150px;">Submit</button>
+      </div>
+
+  </form>
+</div>
+
+</div>
+</mat-card>

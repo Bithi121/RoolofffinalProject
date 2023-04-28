@@ -1,0 +1,99 @@
+
+<div class="page-header">
+  <div class="container">
+ <h1>Employee's Requests</h1>
+   </div>
+  </div>
+  <div class="container">
+   <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+   <a routerLink="/app-ops-manager" color="primary" class="bt" mat-raised-button>
+  <mat-icon >chevron_left</mat-icon>Go Back</a>
+   </div>
+  </div>
+  <div class="mt-3 mat-elevation-z8">
+       <div class="row-base">
+          <div class="col">
+              <tr>
+          <td class="sp"><mat-lable>Globle Group ID :</mat-lable></td>
+          <td>{{request.globalGroupId}}</td>
+          <td class="sp"><mat-lable>Relevant Experience in Years :</mat-lable></td>
+          <td>{{request.relevantExperienceInYears}}</td>
+       </tr>
+             <tr>
+          <td class="sp"><mat-lable>Name :</mat-lable></td>
+          <td>{{request.name}}</td>
+          <td class="sp"><mat-lable>Local Grade :</mat-lable></td>
+          <td>{{request.localGrade}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>PSP :</mat-lable></td>
+          <td>{{request.pspName}}</td>
+          <td class="sp"><mat-lable>Practice :</mat-lable></td>
+          <td>{{request.practice}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Communication :</mat-lable></td>
+          <td>{{request.communication}}</td>
+          <td class="sp"><mat-lable>Roll Off End Date :</mat-lable></td>
+          <td>{{request.rollOffEndDate|date}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Project Code :</mat-lable></td>
+          <td>{{request.projectCode}}</td>
+          <td class="sp"><mat-lable>Project Name :</mat-lable></td>
+          <td>{{request.projectName}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Performance Issue:</mat-lable></td>
+          <td>{{request.performanceIssue}}</td>
+          <td class="sp"><mat-lable>Resigned:</mat-lable></td>
+          <td>{{request.resigned}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Primary Skills :</mat-lable></td>
+          <td>{{request.primarySkills}}</td>
+          <td class="sp"><mat-lable>Reason For Roll Off :</mat-lable></td>
+          <td>{{request.reasonForRollOff}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Under Probation :</mat-lable></td>
+          <td>{{request.underProbation}}</td>
+          <td class="sp"><mat-lable>Role Competencies :</mat-lable></td>
+          <td>{{request.roleCompetencies}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Technical Skills :</mat-lable></td>
+          <td>{{request.technicalSkills}}</td>
+          <td class="sp"><mat-lable>Long Leave :</mat-lable></td>
+          <td>{{request.longLeave}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Remarks :</mat-lable></td>
+          <td>{{request.Remarks}}</td>
+          <td class="sp"><mat-lable>This Release Needs Backfilled :</mat-lable></td>
+          <td>{{request.thisReleaseNeedBackfillIsBackFilled}}</td>
+          </tr>
+          <tr>
+          <td class="sp"><mat-lable>Leave Type :</mat-lable></td>
+          <td>{{request.leaveType}}</td>
+          </tr>
+      </div>
+  </div>
+   <div class="row bot-row">
+  <div class="col-xs-3 p-4" id="app">
+  <a  [ngStyle]="{'background-color':'#37f246'}" [disabled]="!isbutton " mat-raised-button (click)="changeStatus(request.id,'Approved')" class="btn">APPROVE</a>
+  </div>
+  <div class="col-xs-3 p-4" id="rej">
+      <a  [ngStyle]="{'background-color':'Red'}" [disabled]="!isbutton" mat-raised-button (click)="changeStatus(request.id,'Terminated')" class="btn">REJECT</a>
+  </div>
+  </div>
+  <!-- <div class="row bot-row-m" >
+  <div class="col" >
+      <a  color="accent"   [disabled]="!isbutton" mat-raised-button (click)="changeStatus(request.id,'Pending')" class="l-btn">NEED CLARIFICATION</a>
+  </div>
+  </div> -->
+
+</div>
+
+

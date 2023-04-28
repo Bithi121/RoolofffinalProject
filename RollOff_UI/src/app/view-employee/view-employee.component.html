@@ -1,0 +1,82 @@
+<!-- <app-top-nav></app-top-nav> -->
+<div class="page-header">
+    <div class="container">
+        <h1>Employee Details</h1>
+    </div>
+
+</div>
+    <div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+     <a routerLink="/app-employees" style="background-color: #17a2b8; color: white;" class="bt" mat-raised-button><mat-icon>chevron_left</mat-icon>Go Back</a>
+   </div>
+  </div>
+    </div>
+
+    <div class="mt-3 mat-elevation-z8 mx-auto "style="width: 80vw;" >
+      <div *ngIf="flag" class="alert alert-danger alert-dismissible fade show">
+        <p >This employee is already rolled off or has pending roll of request.</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        <div class="row-base">
+           <div class="col ">
+
+                <tr >
+                <td class="sp"><mat-lable>Globle Group ID :</mat-lable></td><td>{{employee.globalGroupId}}</td>
+                <td class="sp"><mat-lable>Employee No :</mat-lable></td><td>{{employee.employeeNo}}</td>
+                </tr>
+
+                <tr>
+                <td class="sp"><mat-lable>Name :</mat-lable></td><td>{{employee.name}}</td>
+                <td class="sp"><mat-lable>Glocal Grade :</mat-lable></td><td>{{employee.localGrade}}</td>
+                </tr>
+
+                <tr>
+                <td class="sp"><mat-lable>Main Client :</mat-lable></td><td>{{employee.mainClient}}</td>
+                <td class="sp"><mat-lable>Email :</mat-lable></td><td>{{employee.email}}</td>
+                </tr>
+
+                <tr>
+                <td class="sp"><mat-lable>Joining Date :</mat-lable></td><td>{{employee.joiningDate}}</td>
+                <td class="sp"><mat-lable>Project Code :</mat-lable></td><td>{{employee.projectCode}}</td>
+                </tr>
+
+                <tr>
+                <td class="sp"><mat-lable>Project Name :</mat-lable></td><td>{{employee.projectName}}</td>
+                <td class="sp"><mat-lable>Project Start Date :</mat-lable></td><td>{{employee.projectStartDate}}</td>
+                </tr>
+
+                    <tr>
+                    <td class="sp"><mat-lable>Project End Date:</mat-lable></td><td>{{employee.projectEndDate}}</td>
+                    <td class="sp"><mat-lable>People Manager:</mat-lable></td><td>{{employee.peopleManager}}</td>
+                    </tr>
+
+                    <tr>
+                    <td class="sp"><mat-lable>Practice :</mat-lable></td><td>{{employee.practice}}</td>
+                    <td class="sp"><mat-lable>PSP Name :</mat-lable></td><td>{{employee.pspName}}</td>
+                    </tr>
+
+                    <tr>
+                    <td class="sp"><mat-lable>New Global Practice :</mat-lable></td><td>{{employee.newGlobalPractice}}</td>
+                    <td class="sp"><mat-lable>Office City :</mat-lable></td><td>{{employee.officeCity}}</td>
+                    </tr>
+                    <tr>
+                    <td class="sp"><mat-lable>Country :</mat-lable></td><td>{{employee.country}}</td></tr>
+
+
+
+        </div>
+    </div>
+    <div class="row bot-row" align="center">
+        <div class="col " >
+          <a [routerLink]="['/feedback-form',employee.globalGroupId]" [disabled]="flag" *ngIf="!flag"   id="row-bot-row"  mat-raised-button>
+            <mat-icon>add_box</mat-icon>
+            Roll Off</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+

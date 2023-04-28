@@ -1,0 +1,24 @@
+table{
+    width:100%;
+}
+.search-input{
+    outline: none;
+    border: 1px solid #CCC;
+    padding:10px 15px;
+    border-radius: 3px;
+    width:400px;
+
+}
+
+.serach-input:active{
+    border:1px solid #06c4f4;
+}
+#edit{
+  color: #17a2b8;
+}
+.serach-input:focus{
+    border:1px solid #06c4f4;
+}
+
+
+

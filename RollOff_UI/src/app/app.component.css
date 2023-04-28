@@ -1,0 +1,17 @@
+.mat-button-base{
+  margin-right: 1em;
+text-decoration: none;
+color: white;
+font-weight: bold;
+font-size: 20px;
+font-family: serif;
+}
+
+
+.nav{
+background-color: #17a2b8;
+}
+
+#logout{
+float: right;
+}
